@@ -1,0 +1,172 @@
+/* ----- Main Layout ----- */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 30px auto;
+    max-width: 1350px;
+    padding: 0 20px;
+}
+
+/* Column Widths */
+.col-8 {
+    width: 62%;
+}
+
+.col-4 {
+    width: 35%;
+}
+
+/* ----- Card Styling ----- */
+.card {
+    background: #F7F5EF; 
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    border: 1px solid #EEE;
+}
+
+.card h5 {
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: #444;
+    font-weight: 600;
+}
+
+/* ----- Table Styling ----- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 4px;
+}
+
+thead th {
+    background: #F0F0F0;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #dcdcdc;
+    font-size: 15px;
+}
+
+tbody td {
+    padding: 12px;
+    font-size: 15px;
+    background: #FAFAFA;
+}
+
+tbody tr:nth-child(even) td {
+    background: #F2F2F2;
+}
+
+.car-image {
+    width: 85px;
+    border-radius: 5px;
+}
+
+/* ------------------------------------------
+   OPTION B — CLEAN PROFESSIONAL BUTTON UI
+------------------------------------------- */
+
+/* Action buttons inside table (Edit/Delete) */
+.action-icon {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    margin-right: 6px;
+    transition: 0.2s ease;
+}
+
+/* Edit icon */
+.edit-btn i {
+    color: #333;
+}
+.edit-btn:hover {
+    background: #f4f4f4;
+    border-color: #ccc;
+}
+
+/* Delete icon */
+.delete-btn i {
+    color: #d9534f;
+}
+.delete-btn:hover {
+    background: #ffeaea;
+    border-color: #e4b3b3;
+}
+
+/* Prevent icon blocking click */
+.action-icon i {
+    pointer-events: none;
+}
+
+/* ------------------------------------------
+   Form Buttons (Save + Reset)
+------------------------------------------- */
+.submit-btn,
+.reset-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+    margin-top: 10px;
+}
+
+/* Save Button */
+.submit-btn {
+    color: #333;
+}
+.submit-btn:hover {
+    background: #f4f4f4;
+    border-color: #ccc;
+}
+
+/* Reset Button */
+.reset-btn {
+    color: #555;
+}
+.reset-btn:hover {
+    background: #f4f4f4;
+    border-color: #ccc;
+}
+
+/* ----- Form Styling ----- */
+form label {
+    display: block;
+    margin-top: 14px;
+    font-weight: 500;
+}
+
+form input {
+    width: 100%;
+    padding: 11px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    background: white;
+    font-size: 15px;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 1100px) {
+    .container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .col-8, .col-4 {
+        width: 100%;
+    }
+}

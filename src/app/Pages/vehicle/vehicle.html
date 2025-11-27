@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="col-8">
+        <div class="card">
+            <h5>Vehicle List</h5>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                        <th>Color</th>
+                        <th>Daily Rate</th>
+                        <th>Reg No</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of carList; track $index) {
+                    <tr>
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ item.brand }}</td>
+                        <td>{{ item.model }}</td>
+                        <td>{{ item.year }}</td>
+                        <td>{{ item.color }}</td>
+                        <td>{{ item.dailyRate }}</td>
+                        <td>{{ item.regNo }}</td>
+                        <td>
+                            <img class="car-image" src="https://via.placeholder.com/100x60" alt="Car Image" />
+                        </td>
+                        <td>
+                            <button class="edit-btn action-icon" (click)="onEdit(item)"><i class="fa fa-edit"></i></button>
+                            <button class="delete-btn action-icon" (click)="onDeleteByCarId(item.carId)"><i class="fa fa-trash"></i></button>
+
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="col-4">
+        <div class="card">
+            <h5>Add / Edit Vehicle</h5>
+            <form id="vehicleForm">
+                <label for="brand">Brand</label>
+                <input type="text" [(ngModel)]="newCarObj.brand" name="Brand" id="brand" name="Brand" required />
+
+                <label for="model">Model</label>
+                <input type="text" [(ngModel)]="newCarObj.model" name="model" id="model" name="Model" required />
+
+                <label for="year">Year</label>
+                <input type="number" [(ngModel)]="newCarObj.year" name="year" id="year" name="Year" min="1900"
+                    max="2099" required />
+
+                <label for="color">Color</label>
+                <input type="text" [(ngModel)]="newCarObj.color" name="Color" id="color" name="Color" required />
+
+                <label for="dailyRate">Daily Rate</label>
+                <input type="number" [(ngModel)]="newCarObj.dailyRate" name="dailyRate" id="dailyRate" name="DailyRate"
+                    min="0" required />
+
+                <label for="regNo">Registration Number</label>
+                <input type="text" [(ngModel)]="newCarObj.regNo" name="regNo" id="regNo" name="RegNo" required />
+
+                <label for="carImage">Car Image URL</label>
+                <input type="url" [(ngModel)]="newCarObj.carImage" name="car-image" id="carImage" name="CarImage" />
+
+            @if (newCarObj.carId == 0) {
+                <button type="submit" (click)="onSaveCar()" class="submit-btn">Save Vehicle</button>
+            }@else {<button type="submit" (click)="onUpdateCar()" class="submit-btn">Update</button>}
+            
+                <button type="reset" class="reset-btn">Reset</button>
+            </form>
+        </div>
+    </div>
+</div>
