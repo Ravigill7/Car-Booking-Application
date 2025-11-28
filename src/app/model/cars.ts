@@ -17,11 +17,11 @@ export class carsModel {
         this.dailyRate = 0;
         this.model = "";
         this.regNo = "";
-
     }
 }
+
 export interface APIResponse {
-    message: String,
-    result: boolean,
-    data: any
+    message: string; 
+    result: boolean;
+    data: carsModel[] | null;
 }
