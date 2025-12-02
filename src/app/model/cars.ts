@@ -21,7 +21,8 @@ export class carsModel {
 }
 
 export interface APIResponse {
-    message: string; 
+    message: string;
     result: boolean;
     data: carsModel[] | null;
 }
+
