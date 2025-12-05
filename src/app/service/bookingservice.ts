@@ -16,4 +16,9 @@ export class Bookingservice {
     return this.http.get("https://freeapi.miniprojectideas.com/api/CarRentalApp/GetCars");
   }
 
+ saveBooking(obj: any) {
+  return this.http.post("https://freeapi.miniprojectideas.com/api/CarRentalApp/CreateNewBooking",obj);
+}
+
+
 }

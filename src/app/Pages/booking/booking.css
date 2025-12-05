@@ -19,7 +19,7 @@
 /* Booking Card Header */
 .booking-card .card-header {
   background-color: #ffc107;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: 600;
   font-size: 1rem;
   padding: 0.35rem 0.8rem;
@@ -63,9 +63,27 @@
   margin-bottom: 1rem;
 }
 
-.booking-form-clean .btn {
-  min-width: 100px;
-  padding: 7px 16px;
-  font-size: 0.9rem;
-  border-radius: 6px;
+/* Save Button (Green) */
+.btn-save {
+  background-color: #28a745 !important; 
+  color: white !important;
+  border: none;
 }
+
+
+.btn-clear {
+  background-color: #007bff !important; 
+  color: white !important;
+  border: none;
+}
+
+/* Button spacing */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+
+
