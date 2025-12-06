@@ -14,17 +14,18 @@ export class Booking implements OnInit {
   carList: any[] = [];
   bookinList: any[] = []
 
-  bookingForm: FormGroup = new FormGroup({
-    customerName: new FormControl(""),
-    customerCity: new FormControl(""),
-    mobileNo: new FormControl(""),
-    email: new FormControl(""),
-    bookingId: new FormControl(""),
-    carId: new FormControl(""),
-    bookingDate: new FormControl(""),
-    discount: new FormControl(""),
-    totalBillAmount: new FormControl("")
-  });
+ bookingForm: FormGroup = new FormGroup({
+  CustomerName: new FormControl(""),
+  CustomerCity: new FormControl(""),
+  MobileNo: new FormControl(""),
+  Email: new FormControl(""),
+  BookingId: new FormControl(0),
+  CarId: new FormControl(0),
+  BookingDate: new FormControl(""),
+  Discount: new FormControl(0),
+  TotalBillAmount: new FormControl(0)
+});
+
 
 
 
@@ -45,5 +46,16 @@ export class Booking implements OnInit {
       (res: any) => { this.bookinList = res.data; },
     );
   }
+
+onSave() {
+  const formvalue = this.bookingForm.value;
+  this.bookingsrv.saveBooking(formvalue).subscribe ((res:any) =>{
+    if(res.result) {
+      alert ("booking done")
+      this.getAllBooking();
+    }else{ alert(res.message)
+    }
+  })
+} 
 
 }

@@ -26,22 +26,7 @@
               </div>
             </div>
 
-            <div class="col-md-6 mb-3">
-              <div class="card booking-card">
-                <div class="card-header">Booking ID: 102</div>
-                <div class="card-body">
-                  <p><strong>Customer Name:</strong> Jane Smith</p>
-                  <p><strong>City:</strong> Los Angeles</p>
-                  <p><strong>Mobile:</strong> 987-654-3210</p>
-                  <p><strong>Email:</strong> jane.smith@example.com</p>
-                  <p><strong>Car ID:</strong> 3</p>
-                  <p><strong>Booking Date:</strong> 2025-11-27 02:30 PM</p>
-                  <p><strong>Discount:</strong> 5</p>
-                  <p><strong>Total Bill:</strong> ₹12,500</p>
-                </div>
-              </div>
-            </div>
-
+        
           </div>
         </div>
 
@@ -61,12 +46,12 @@
             <div class="row mb-3">
               <div class="col-6">
                 <label class="form-label">Customer Name</label>
-                <input type="text" formControlName="customerName" class="form-control" placeholder="Enter name">
+                <input type="text" formControlName="CustomerName" class="form-control" placeholder="Enter name">
               </div>
 
               <div class="col-6">
                 <label class="form-label">Customer City</label>
-                <input type="text" formControlName="customerCity" class="form-control" placeholder="Enter city">
+                <input type="text" formControlName="CustomerCity" class="form-control" placeholder="Enter city">
               </div>
             </div>
 
@@ -74,12 +59,12 @@
             <div class="row mb-3">
               <div class="col-6">
                 <label class="form-label">Mobile No</label>
-                <input type="text" formControlName="mobileNo" class="form-control" placeholder="Enter mobile">
+                <input type="text" formControlName="MobileNo" class="form-control" placeholder="Enter mobile">
               </div>
 
               <div class="col-6">
                 <label class="form-label">Email</label>
-                <input type="email" formControlName="email" class="form-control" placeholder="Enter email">
+                <input type="email" formControlName="Email" class="form-control" placeholder="Enter email">
               </div>
             </div>
 
@@ -87,12 +72,12 @@
             <div class="row mb-3">
               <div class="col-6">
                 <label class="form-label">Booking ID</label>
-                <input type="number" formControlName="bookingId" class="form-control" placeholder="ID">
+                <input type="number" formControlName="BookingId" class="form-control" placeholder="ID">
               </div>
 
               <div class="col-6">
                 <label class="form-label">Car ID</label>
-                <select formControlName="carId" class="form-control">
+                <select formControlName="CarId" class="form-control">
                   @for (item of carList; track $index) {
                   <option [value]="item.carId"> {{item.regNo}}</option>
                   }
@@ -104,12 +89,12 @@
             <div class="row mb-3">
               <div class="col-6">
                 <label class="form-label">Booking Date</label>
-                <input type="date" formControlName="bookingDate" class="form-control">
+                <input type="date" formControlName="BookingDate" class="form-control">
               </div>
 
               <div class="col-6">
                 <label class="form-label">Discount (%)</label>
-                <input type="number" formControlName="discount" class="form-control" placeholder="0">
+                <input type="number" formControlName="Discount" class="form-control" placeholder="0">
               </div>
             </div>
 
@@ -117,12 +102,12 @@
             <div class="row mb-3">
               <div class="col-12">
                 <label class="form-label">Total Bill Amount</label>
-                <input type="number" formControlName="totalBillAmount" class="form-control" placeholder="₹">
+                <input type="number" formControlName="TotalBillAmount" class="form-control" placeholder="₹">
               </div>
             </div>
 
             <div class="button-group">
-              <button type="submit" class="btn w-100 fw-bold btn-save">Save Booking</button>
+              <button type="submit" (click)="onSave()" class="btn w-100 fw-bold btn-save">Save Booking</button>
               <button type="reset" class="btn w-100 fw-bold btn-clear">Clear</button>
             </div>
           </form>
