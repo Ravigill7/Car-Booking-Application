@@ -26,12 +26,10 @@
   border-bottom: none;
 }
 
-/* Fix text alignment and spacing */
+/* FIX HERE → removed flex, removed justify-content */
 .booking-card p {
   margin: 0.25rem 0;
-  display: flex;
-  justify-content: space-between;
-  white-space: nowrap;
+  white-space: nowrap;   /* Keep your original property */
 }
 
 .booking-card p strong {
@@ -70,7 +68,6 @@
   border: none;
 }
 
-
 .btn-clear {
   background-color: #007bff !important; 
   color: white !important;
@@ -83,7 +80,3 @@
   flex-direction: column;
   gap: 10px;
 }
-
-
-
-

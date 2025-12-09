@@ -7,28 +7,41 @@
           <h5 class="mb-0">Booking List</h5>
         </div>
 
-        <div class="card-body booking-list-container">
-          <div class="row">
+    <div class="col-md-8">
 
-            <div class="col-md-6 mb-3">
-              <div class="card booking-card">
-                <div class="card-header">Booking ID: 101</div>
-                <div class="card-body">
-                  <p><strong>Customer Name:</strong> John Doe</p>
-                  <p><strong>City:</strong> New York</p>
-                  <p><strong>Mobile:</strong> 123-456-7890</p>
-                  <p><strong>Email:</strong> john.doe@example.com</p>
-                  <p><strong>Car ID:</strong> 5</p>
-                  <p><strong>Booking Date:</strong> 2025-11-26 09:26 AM</p>
-                  <p><strong>Discount:</strong> 10</p>
-                  <p><strong>Total Bill:</strong> ₹15,000</p>
-                </div>
-              </div>
+  <!-- Only ONE Booking List Heading -->
+
+  <div class="booking-list-container">
+    <div class="row">
+
+      @for (item of bookinList; track $index) {
+        <div class="col-md-6 mb-3">
+          <div class="card booking-card">
+
+            <div class="card-header bg-warning text-white fw-bold">
+              Booking ID: {{ item.bookingId }}
             </div>
 
-        
+            <div class="card-body">
+              <p><strong>Customer Name:</strong> {{ item.customerName }}</p>
+              <p><strong>Mobile:</strong> {{ item.mobileNo }}</p>
+              <p><strong>Brand:</strong> {{ item.brand }}</p>
+              <p><strong>Model:</strong> {{ item.model }}</p>
+              <p><strong>Booking Date:</strong> {{ item.bookingDate | date:'yyyy-MM-dd hh:mm a' }}</p>
+              <p><strong>Discount:</strong> {{ item.discount }}</p>
+              <p><strong>Total Bill Amount:</strong> ₹{{ item.totalBillAmount }}</p>
+            </div>
+
           </div>
         </div>
+      }
+
+    </div>
+  </div>
+
+</div>
+
+
 
       </div>
     </div>
